@@ -31,7 +31,7 @@ app.get('/',(req,res)=>{
  
    }).on("error", () =>{
     
-    res.send(500,"error");
+         res.send(500,"error");
     });
     
 });
@@ -40,7 +40,7 @@ app.get('/',(req,res)=>{
 app.get('/:comicId',(req,res)=>{
     var comicId = req.params.comicId;
     if(isNaN(comicId)){
-        res.send(401, 'invalid');
+        res.status(401).send('Invalid').end();
     }else{
         var url = `https://xkcd.com/${comicId}/info.0.json`;
         
