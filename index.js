@@ -6,12 +6,7 @@ var server_url = "https://ibrahim-stratus.herokuapp.com/"
 var maxComics = 2475; 
 var app = express();
 
-
-
-
 app.use(bodyParser.json());
-
-
 
 
 app.get('/',(req,res)=>{
@@ -33,8 +28,7 @@ app.get('/',(req,res)=>{
             res.send(resp.statusCode, "" + resp.statusCode);
         }
        });
-
-       
+ 
    }).on("error", () =>{
     
     res.send(500,"error");
